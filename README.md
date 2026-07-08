@@ -10,7 +10,7 @@ It serves as a **minimalist prototype** of the PV Engine found in major banks' m
 
 ## Core Features
 
-###`yield_curve.py` — Main Valuation Class
+### `yield_curve.py` — Main Valuation Class
 The `YieldCurve` class provides end‑to‑end valuation capabilities:
 
 - **Data Ingestion**: Reads zero‑coupon curve data from a JSON file (tenor, yield, base date) and automatically rolls curve dates to the current trading day.

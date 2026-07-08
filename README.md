@@ -10,5 +10,3 @@ the foundation for the derivative valuation process.
 ## Components:
 **yield_curve.py:** Developed an automated financial model to calculate the valuation of fixed interest rate derivatives, incorporating
 key inputs, outputs, assumptions, and limitations to ensure accuracy.
-
-**Bootstrapping.py:** Created a model utilizing bootstrapping methodology to automatically generate a yield curve from observed bond, interest rate futures, and interest rate swap transaction data.

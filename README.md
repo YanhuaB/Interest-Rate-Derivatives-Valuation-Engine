@@ -1,12 +1,19 @@
-# Capital Maket Derivatives Valuation
+# Interest Rate Derivatives Valuation Engine
 
-## Project Overview:
-Developed and implemented a comprehensive financial model aimed at the valuation of various fixed income derivatives within capital markets. 
-The project focused on creating a robust system capable of efficiently valuing complex derivatives while integrating market data such as bond prices, 
-interest rate futures, and interest rate swaps. The model leverages automated processes for yield curve construction and derivative pricing, ensuring 
-both accuracy and real-time adaptability. Key methodologies, including bootstrapping, were employed to construct a detailed yield curve that serves as 
-the foundation for the derivative valuation process.
+## Project Overview
 
-## Components:
-**yield_curve.py:** Developed an automated financial model to calculate the valuation of fixed interest rate derivatives, incorporating
-key inputs, outputs, assumptions, and limitations to ensure accuracy.
+This project is a **valuation engine for interest rate derivatives**, focused on the **valuation application layer** within a financial system. It loads pre‑constructed zero‑coupon yield curves, interpolates yields for arbitrary tenors, derives discount factors, and computes the present value (PV) of cash flows.
+
+It serves as a **minimalist prototype** of the PV Engine found in major banks' market risk systems (e.g., FRTB compliance).
+
+---
+
+## Core Features
+
+###`yield_curve.py` — Main Valuation Class
+The `YieldCurve` class provides end‑to‑end valuation capabilities:
+
+- **Data Ingestion**: Reads zero‑coupon curve data from a JSON file (tenor, yield, base date) and automatically rolls curve dates to the current trading day.
+- **Tenor Interpolation**: Implements **linear interpolation** to estimate yields for non‑standard tenors (e.g., 3.5Y) between standard nodes (e.g., 1Y, 2Y, 5Y, … 30Y).
+- **Discount Factor Derivation**: Converts interpolated yields into discount factors.
+- **PV & Profit/Loss Calculation**: Computes the present value of single or multiple cash flows, and generates visualisations of profit curves and average daily profit across different tenors.
